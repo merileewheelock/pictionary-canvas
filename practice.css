@@ -1,0 +1,13 @@
+h1{
+	color: purple;
+}
+
+canvas{
+	border: 10px solid black;
+	margin: 10px;
+	background-image: url("http://cdn3-www.dogtime.com/assets/uploads/2009/11/jack-russell-dog-names.jpg")
+}
+
+#click-count{
+	
+}
