@@ -25,7 +25,7 @@ context.arc(200,200,50,0,1.5*Math.PI);
 
 var x = 200;
 var y = 200;
-var radius = 50;
+var r = 50;
 var xDirection = 1;
 var yDirection = 1;
 // var red = 0;
@@ -36,14 +36,14 @@ function drawBall(){
 	
 	context.fillStyle = "#ff84e8";
 	context.beginPath();
-	context.arc(x,y,radius,0,2*Math.PI);
+	context.arc(x,y,r,0,2*Math.PI);
 	context.clearRect(0,0,680,453); // This will draw a rectangle and clear the secion of screen
 	context.fill();
-	if ((x > 680-radius) || (x < radius)){
+	if ((x > 680-r) || (x < r)){
 		// we have reached the right side. Reverse!
 		xDirection = -xDirection;
 	}
-	if ((y > 453-radius) || (y < radius)){
+	if ((y > 453-r) || (y < r)){
 		// we have reached the right side. Reverse!
 		yDirection = -yDirection;
 	}
@@ -59,14 +59,21 @@ function drawBall(){
 
 }
 
-var ball = setInterval(drawBall,20); // We are passing drawBall
+var ball = setInterval(drawBall,10); // We are passing drawBall
 
-canvas.addEventListener("click", function(event){ // If the user clicks anywhere on the canvas
-	console.log(event.x, event.y);
-	console.log(Math.hypot(event.x, event.y));
-	if (Math.hypot(event.x, event.y) <= 50){
-		console.log("match");
-	}
+var hit = 0;
+var miss = 0;
+canvas.addEventListener("click", function(event){
+    if(Math.sqrt((event.layerY - y) * (event.layerY - y) + (event.layerX - x) * (event.layerX - x)) < (2 * r)){
+        // console.log("Hit");
+        hit++;
+    }
+    else{
+        // console.log("Miss");
+        miss++;
+    }
+    document.getElementById("hit-count").innerHTML = hit;
+	document.getElementById("miss-count").innerHTML = miss;
 });
 
 
