@@ -1,5 +1,14 @@
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
+
+// ADDING COLOR PICKER
+
+var color = "#FFFF00";
+var colorPicker = document.getElementById("color-picker");
+colorPicker.addEventListener("change", function(event){
+	color = colorPicker.value; 
+});
+
 // context.moveTo(0,0); // Means move the pen inside the canvas
 // Move the pen/hand/tool to 100,100
 context.moveTo(100,100);
@@ -10,12 +19,12 @@ context.lineTo(300,100);
 context.lineTo(100,200);
 context.lineTo(300,150);
 context.lineTo(100,100);
-context.strokeStyle = "#FF0000";
+context.strokeStyle = color;
 // context.stroke(); // This will actually draw the line
 
 // Draw a circle
 context.beginPath();
-context.fillStyle = "#FFFF00";
+context.fillStyle = color;
 context.arc(200,200,50,0,1.5*Math.PI);
 // context.fill();
 // context.stroke(); // This will draw the border
@@ -34,10 +43,10 @@ var yDirection = 1;
 
 function drawBall(){
 	
-	context.fillStyle = "#ff84e8";
+	context.fillStyle = color;
 	context.beginPath();
 	context.arc(x,y,r,0,2*Math.PI);
-	context.clearRect(0,0,680,453); // This will draw a rectangle and clear the secion of screen
+	context.clearRect(0,0,680,453); // This will draw a rectangle and clear the section of screen
 	context.fill();
 	if ((x > 680-r) || (x < r)){
 		// we have reached the right side. Reverse!
@@ -75,6 +84,4 @@ canvas.addEventListener("click", function(event){
     document.getElementById("hit-count").innerHTML = hit;
 	document.getElementById("miss-count").innerHTML = miss;
 });
-
-
 

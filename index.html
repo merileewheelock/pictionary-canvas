@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pictionary</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+<div class="container">
+	<div class="top-box col-md-offset-4 col-md-4">
+		<div class="title">
+			<h1>Pictionary</h1>
+		</div>
+
+		<div id="toolbar">
+			
+			<div class="thickness">
+				<label>Choose your marker thickness</label>
+				<input type="number" id="thickness" value="10" />
+			</div>
+			<div class="color-section">
+				<label>Choose your marker color</label>
+				<input type="color" id="color-picker" />
+			</div>
+		</div>
+	</div>
+
+	<div class="canvas-area">
+		<canvas id="canvas" height="500px" width="500px"></canvas>
+	</div>
+
+	<button class="btn btn-warning" onclick="context.clearRect(0,0,500,500);">Clear</button>
+
+	<script type="text/javascript" src="scripts.js"></script>
+
+</div>
+
+</body>
+</html>

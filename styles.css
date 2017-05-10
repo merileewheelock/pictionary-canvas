@@ -1,0 +1,33 @@
+*{
+	text-align: center;
+	font-family: 'Inknut Antiqua', serif;
+}
+
+body{
+	background-image: url("http://www.wallpapers-web.com/data/out/69/4331428-drawings-wallpapers.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+}
+
+.container{
+	border: 10px solid black;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+.top-box{
+	border: 5px solid black;
+	margin-bottom: 10px;
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+canvas{
+	border: 5px solid black;
+	background-color: white;
+}
+
+#thickness{
+	width: 40px;
+}
