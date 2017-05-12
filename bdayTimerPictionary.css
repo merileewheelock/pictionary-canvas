@@ -1,0 +1,54 @@
+*{
+	text-align: center;
+	font-family: 'Inknut Antiqua', serif;
+}
+
+body{
+	height:  100vh;
+	background: url("https://s-media-cache-ak0.pinimg.com/originals/e3/39/41/e33941503646349ea3d379c0d66f8243.jpg") no-repeat center;
+	background-size: cover;
+	text-align: center; 
+}
+
+.container{
+	border: 10px solid black;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+.top-box, .toolbar{
+	border: 5px solid black;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+.enter-bday{
+	margin: 10px;
+}
+
+canvas{
+	border: 5px solid white;
+	background-color: white;
+	background-image: url("birthday.jpg");
+	background-size: cover;
+}
+
+#thickness{
+	width: 40px;
+}
+
+#timer-div{
+	background-color: none;
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+}
+
+.time-unit, .time-unit > span{
+	padding: 5px;
+	border-radius: 3px;
+	background: #3B9CBC;
+	display: inline-block;
+}
